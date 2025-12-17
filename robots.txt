@@ -1,0 +1,11 @@
+# robots.txt for topzambiabetting.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://topzambiabetting.com/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 1
+

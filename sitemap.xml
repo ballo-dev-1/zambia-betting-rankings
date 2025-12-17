@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://topzambiabetting.com/</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/Bwanabet logo.png</image:loc>
+      <image:title>BwanaBet Logo</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://topzambiabetting.com/comparison.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/about.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://topzambiabetting.com/privacy-policy.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/terms-of-service.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Guides -->
+  <url>
+    <loc>https://topzambiabetting.com/guides/</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/guides/how-to-choose-betting-site.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/guides/payment-methods-zambia.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/guides/betting-for-beginners.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Review Pages -->
+  <url>
+    <loc>https://topzambiabetting.com/reviews/bwanabet.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/Bwanabet logo.png</image:loc>
+      <image:title>BwanaBet Logo</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/reviews/bolabet.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/bolabet.png</image:loc>
+      <image:title>BolaBet Logo</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/reviews/gal-sports-bet.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/gsb.png</image:loc>
+      <image:title>Gal Sports Bet Logo</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/reviews/1xbet.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/1xbet.png</image:loc>
+      <image:title>1xBet Logo</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/reviews/melbet.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/melbet.png</image:loc>
+      <image:title>Melbet Logo</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/reviews/castlebet-lite.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/reviews/betpawa.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/betpawa.png</image:loc>
+      <image:title>BetPawa Logo</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://topzambiabetting.com/reviews/betway.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://topzambiabetting.com/logos/betway.png</image:loc>
+      <image:title>Betway Logo</image:title>
+    </image:image>
+  </url>
+  
+</urlset>

@@ -1,0 +1,58 @@
+# Security Headers for Zambia Betting Rankings
+# Copy this file to .htaccess on your server
+
+# Enable HTTPS redirect
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# HSTS (HTTP Strict Transport Security)
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# X-Frame-Options (prevent clickjacking)
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# X-Content-Type-Options (prevent MIME type sniffing)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# X-XSS-Protection
+<IfModule mod_headers.c>
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Content Security Policy (adjust as needed)
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+</IfModule>
+
+# Referrer Policy
+<IfModule mod_headers.c>
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Remove server signature
+ServerSignature Off
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html "access plus 1 day"
+</IfModule>
+
