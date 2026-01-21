@@ -331,7 +331,133 @@
       z-index: 9999;
       font-weight: 700
     }
+
+    /* Cookie Consent Banner */
+    #cookie-consent-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card);
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding: 1rem 1.5rem;
+      z-index: 10000;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, .3);
+      display: none;
+    }
+
+    #cookie-consent-banner.show {
+      display: block;
+    }
+
+    .cookie-consent-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cookie-consent-text {
+      flex: 1;
+      min-width: 250px;
+      color: var(--text);
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    .cookie-consent-actions {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    .cookie-consent-btn {
+      padding: .6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: .9rem;
+      cursor: pointer;
+      border: none;
+      transition: all .2s ease;
+    }
+
+    .cookie-consent-btn-accept {
+      background: var(--green);
+      color: #052e2b;
+    }
+
+    .cookie-consent-btn-accept:hover {
+      background: var(--green-2);
+    }
+
+    @media (max-width: 768px) {
+      #cookie-consent-banner {
+        padding: 1rem;
+      }
+
+      .cookie-consent-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cookie-consent-actions {
+        width: 100%;
+      }
+
+      .cookie-consent-btn {
+        flex: 1;
+        min-width: 120px;
+      }
+    }
   </style>
+
+  <!-- Google Analytics 4 - Consent-Aware Implementation -->
+  <script>
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // GA4 Measurement ID
+    const GA_MEASUREMENT_ID = 'G-Z3HCLBEG6E';
+    const CONSENT_KEY = 'zb_ga_consent';
+
+    // Function to load Google Analytics
+    function loadGoogleAnalytics() {
+      // Load the gtag.js script
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+      document.head.appendChild(script);
+
+      // Configure GA4 with IP anonymization
+      gtag('config', GA_MEASUREMENT_ID, {
+        'anonymize_ip': true
+      });
+    }
+
+    // Function to accept analytics and load GA
+    function acceptAnalytics() {
+      // Store consent in localStorage
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+      
+      // Hide the consent banner
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+      }
+
+      // Load Google Analytics
+      loadGoogleAnalytics();
+    }
+
+    // Check if consent was already given
+    if (localStorage.getItem(CONSENT_KEY) === 'accepted') {
+      loadGoogleAnalytics();
+    }
+  </script>
 </head>
 
 <body>
@@ -383,7 +509,32 @@
       </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description">
+    <div class="cookie-consent-content">
+      <div class="cookie-consent-text">
+        <strong id="cookie-consent-title">We use cookies</strong>
+        <span id="cookie-consent-description">This website uses Google Analytics to help us understand how visitors interact with our site. By clicking "Accept", you consent to our use of analytics cookies.</span>
+      </div>
+      <div class="cookie-consent-actions">
+        <button class="cookie-consent-btn cookie-consent-btn-accept" onclick="acceptAnalytics()" aria-label="Accept cookies and analytics">
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Show consent banner if consent not given
+    if (localStorage.getItem('zb_ga_consent') !== 'accepted') {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.classList.add('show');
+      }
+    }
+  </script>
 </body>
 
 </html>

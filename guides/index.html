@@ -74,7 +74,25 @@
     }
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
     .sr-only:focus{position:static;width:auto;height:auto;padding:1rem;margin:0;overflow:visible;clip:auto;background:var(--green);color:#052e2b;z-index:9999;font-weight:700}
+    
+    /* Cookie Consent Banner */
+    #cookie-consent-banner{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid rgba(255,255,255,.1);padding:1rem 1.5rem;z-index:10000;box-shadow:0 -4px 20px rgba(0,0,0,.3);display:none}
+    #cookie-consent-banner.show{display:block}
+    .cookie-consent-content{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .cookie-consent-text{flex:1;min-width:250px;color:var(--text);font-size:.9rem;line-height:1.5}
+    .cookie-consent-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+    .cookie-consent-btn{padding:.6rem 1.2rem;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:all .2s ease}
+    .cookie-consent-btn-accept{background:var(--green);color:#052e2b}
+    .cookie-consent-btn-accept:hover{background:var(--green-2)}
+    @media (max-width:768px){#cookie-consent-banner{padding:1rem}.cookie-consent-content{flex-direction:column;align-items:stretch}.cookie-consent-actions{width:100%}.cookie-consent-btn{flex:1;min-width:120px}}
   </style>
+  <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());
+    const GA_MEASUREMENT_ID='G-Z3HCLBEG6E',CONSENT_KEY='zb_ga_consent';
+    function loadGoogleAnalytics(){const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_MEASUREMENT_ID;document.head.appendChild(s);gtag('config',GA_MEASUREMENT_ID,{'anonymize_ip':true})}
+    function acceptAnalytics(){localStorage.setItem(CONSENT_KEY,'accepted');const b=document.getElementById('cookie-consent-banner');if(b)b.style.display='none';loadGoogleAnalytics()}
+    if(localStorage.getItem(CONSENT_KEY)==='accepted')loadGoogleAnalytics()
+  </script>
 </head>
 <body>
   <a href="#main-content" class="sr-only">Skip to main content</a>
@@ -126,7 +144,21 @@
       </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <div id="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description">
+    <div class="cookie-consent-content">
+      <div class="cookie-consent-text">
+        <strong id="cookie-consent-title">We use cookies</strong>
+        <span id="cookie-consent-description">This website uses Google Analytics to help us understand how visitors interact with our site. By clicking "Accept", you consent to our use of analytics cookies.</span>
+      </div>
+      <div class="cookie-consent-actions">
+        <button class="cookie-consent-btn cookie-consent-btn-accept" onclick="acceptAnalytics()" aria-label="Accept cookies and analytics">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    if(localStorage.getItem('zb_ga_consent')!=='accepted'){const b=document.getElementById('cookie-consent-banner');if(b)b.classList.add('show')}
+  </script>
 </body>
 </html>
 
