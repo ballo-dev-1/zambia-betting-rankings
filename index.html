@@ -66,7 +66,7 @@
   -->
   <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
 
-  <!-- Google Analytics 4 - Consent-Aware Implementation -->
+  <!-- Google Analytics 4 - Automatic Implementation -->
   <script>
     // Initialize dataLayer
     window.dataLayer = window.dataLayer || [];
@@ -75,41 +75,17 @@
 
     // GA4 Measurement ID
     const GA_MEASUREMENT_ID = 'G-Z3HCLBEG6E';
-    const CONSENT_KEY = 'zb_ga_consent';
 
-    // Function to load Google Analytics
-    function loadGoogleAnalytics() {
-      // Load the gtag.js script
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
-      document.head.appendChild(script);
+    // Load Google Analytics immediately
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(script);
 
-      // Configure GA4 with IP anonymization
-      gtag('config', GA_MEASUREMENT_ID, {
-        'anonymize_ip': true
-      });
-    }
-
-    // Function to accept analytics and load GA
-    function acceptAnalytics() {
-      // Store consent in localStorage
-      localStorage.setItem(CONSENT_KEY, 'accepted');
-      
-      // Hide the consent banner
-      const banner = document.getElementById('cookie-consent-banner');
-      if (banner) {
-        banner.style.display = 'none';
-      }
-
-      // Load Google Analytics
-      loadGoogleAnalytics();
-    }
-
-    // Check if consent was already given
-    if (localStorage.getItem(CONSENT_KEY) === 'accepted') {
-      loadGoogleAnalytics();
-    }
+    // Configure GA4 with IP anonymization
+    gtag('config', GA_MEASUREMENT_ID, {
+      'anonymize_ip': true
+    });
   </script>
   <meta name="format-detection" content="telephone=no, address=no, email=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -1803,34 +1779,11 @@
     </div>
   </footer>
 
-  <!-- Cookie Consent Banner -->
-  <div id="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description">
-    <div class="cookie-consent-content">
-      <div class="cookie-consent-text">
-        <strong id="cookie-consent-title">We use cookies</strong>
-        <span id="cookie-consent-description">This website uses Google Analytics to help us understand how visitors interact with our site. By clicking "Accept", you consent to our use of analytics cookies.</span>
-      </div>
-      <div class="cookie-consent-actions">
-        <button class="cookie-consent-btn cookie-consent-btn-accept" onclick="acceptAnalytics()" aria-label="Accept cookies and analytics">
-          Accept
-        </button>
-      </div>
-    </div>
-  </div>
-
   <script>
     // Lightweight runtime details
     const d = new Date();
     document.getElementById('year').textContent = d.getFullYear();
     document.getElementById('updated').textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-
-    // Show consent banner if consent not given
-    if (localStorage.getItem('zb_ga_consent') !== 'accepted') {
-      const banner = document.getElementById('cookie-consent-banner');
-      if (banner) {
-        banner.classList.add('show');
-      }
-    }
 
     // Register Service Worker
     if ('serviceWorker' in navigator) {

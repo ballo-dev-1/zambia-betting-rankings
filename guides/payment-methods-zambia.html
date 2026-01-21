@@ -269,10 +269,9 @@
   </style>
   <script>
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());
-    const GA_MEASUREMENT_ID='G-Z3HCLBEG6E',CONSENT_KEY='zb_ga_consent';
-    function loadGoogleAnalytics(){const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_MEASUREMENT_ID;document.head.appendChild(s);gtag('config',GA_MEASUREMENT_ID,{'anonymize_ip':true})}
-    function acceptAnalytics(){localStorage.setItem(CONSENT_KEY,'accepted');const b=document.getElementById('cookie-consent-banner');if(b)b.style.display='none';loadGoogleAnalytics()}
-    if(localStorage.getItem(CONSENT_KEY)==='accepted')loadGoogleAnalytics()
+    const GA_MEASUREMENT_ID='G-Z3HCLBEG6E';
+    const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_MEASUREMENT_ID;document.head.appendChild(s);
+    gtag('config',GA_MEASUREMENT_ID,{'anonymize_ip':true})
   </script>
 </head>
 
@@ -329,20 +328,8 @@
       </div>
     </div>
   </footer>
-  <div id="cookie-consent-banner" role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description">
-    <div class="cookie-consent-content">
-      <div class="cookie-consent-text">
-        <strong id="cookie-consent-title">We use cookies</strong>
-        <span id="cookie-consent-description">This website uses Google Analytics to help us understand how visitors interact with our site. By clicking "Accept", you consent to our use of analytics cookies.</span>
-      </div>
-      <div class="cookie-consent-actions">
-        <button class="cookie-consent-btn cookie-consent-btn-accept" onclick="acceptAnalytics()" aria-label="Accept cookies and analytics">Accept</button>
-      </div>
-    </div>
-  </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    if(localStorage.getItem('zb_ga_consent')!=='accepted'){const b=document.getElementById('cookie-consent-banner');if(b)b.classList.add('show')}
   </script>
 </body>
 
